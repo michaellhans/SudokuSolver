@@ -19,6 +19,23 @@ def PrintGrid(Grid):
         print()
     print('+-------+-------+-------+')
 
+# Print all coordinates of certain value
+def PrintCoordinate(listOfCoordinate, k):
+    print("Daftar koordinat dari area bernomor "+str(k)+": ")
+    count = 0
+    for coordinate in listOfCoordinate:
+        count += 1
+        print(str(count)+". ("+str(coordinate[0])+", "+str(coordinate[1])+")")
+
+# Get all coordinate of k value in the sudoku grid
+def GetAllCoordinate(Grid, k):
+    listOfCoordinates = []
+    for i in range(9):
+        for j in range(9):
+            if (Grid[i][j] == k):
+                listOfCoordinates.append([i+1, j+1])
+    return listOfCoordinates
+
 # Fill the sudoku grid
 def FillTheGrid(Grid, i, j):
     if (i < 9):

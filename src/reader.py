@@ -3,6 +3,7 @@
 
 from PIL import Image
 import pytesseract
+import cv2 as cv
 
 # Load the grid from the unsolved sudoku image
 def LoadFromImage(fileName, tesseractPath):
