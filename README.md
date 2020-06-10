@@ -30,12 +30,12 @@ Dalam pengerjaan bonus, berikut ini adalah beberapa library yang digunakan dalam
     Pengekstrakan data bisa dilakukan dengan cepat dan penulisan kode relatif lebih mudah (cukup 1 baris saja)<br>
   - *Kekurangan (-)*:<br>
     Hasil ekstraksi terlalu detail sehingga pola-pola pada gambar seperti garis, kotak, atau gambar yang tidak beraturan juga ikut diekstrak menjadi simbol-simbol yang mendekatinya. Selain itu, instalasi library tesseract juga agak merumitkan dibandingkan library python lainnya.<br>
-- **Pillow (PIL)**<br>
+- **Pillow (PIL)**<br><br>
   Library ini digunakan untuk melakukan pengolahan terhadap gambar yang diinput. Pengolahan tersebut dapat berupa pemotongan gambar (cropping) dengan tujuan agar hasil ekstrak data dari gambar bisa menjadi lebih akurat.<br>
   - *Kelebihan (+)* :<br>
     Pengolahan gambar yang lebih mudah mengingat method-method yang disediakan mudah dipahami dan mudah penggunaannya.<br>
   - *Kekurangan (-)*:<br>
-    Pengolahan gambar mungkin tidak sedetail dengan OpenCV. Gambar yang digunakan dalam pengekstrakan harus *straightforward* (langsung pada inti gambar yang ingin diolah).<br>
+    Pengolahan gambar mungkin tidak sedetail dengan OpenCV. Gambar yang digunakan dalam pengekstrakan harus *straightforward* (langsung pada inti gambar yang ingin diolah).<br><br>
 - **Regular Expression**<br>
   Library ini digunakan untuk menghapus character-character non-numerik dari hasil pengekstrakan data.<br>
   - *Kelebihan (+)* :<br>
