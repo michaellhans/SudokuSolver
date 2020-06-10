@@ -18,9 +18,9 @@ Anda adalah Mr. Khun, saat ini Anda tergabung bersama tim Sweet & Sour untuk men
 - [X] Program dikerjakan secara Individu dan mencantumkan referensi
 
 ### Strategi Pencarian Solusi
-Algoritma yang digunakan dalam penyelesaian Sudoku adalah algoritma Backtracking. Alasan penggunaan algoritma Backtracking sendiri adalah karena prinsip dan cara kerja dari algoritma ini menurut saya cukup pintar dan logis seperti cara bermain sudoku yang sebenarnya. Pengisian sudoku memanfaatkan rules dari permainan Sudoku itu sendiri, yaitu memastikan setiap angka yang diisi merupakan angka yang unik pada satu kolom, satu baris, dan satu sub-grid tempat pengisian tersebut. Apabila hasil pengisian mentok pada titik tertentu, pengisian akan dirunut-balik ke pengisian sebelumnya dengan mengganti dengan angka yang lain.
+Algoritma yang digunakan dalam penyelesaian Sudoku adalah algoritma Backtracking. Alasan penggunaan algoritma Backtracking sendiri adalah karena prinsip dan cara kerja dari algoritma ini menurut saya cukup pintar dan logis seperti cara bermain sudoku yang sebenarnya. Pengisian sudoku memanfaatkan rules dari permainan Sudoku itu sendiri, yaitu memastikan setiap angka yang diisi merupakan angka yang unik pada satu kolom, satu baris, dan satu sub-grid tempat pengisian tersebut. Program akan melakukan iterasi seluruh area terurut dari atas ke bawah untuk pengisian setiap area. Apabila hasil pengisian mentok pada titik tertentu, pengisian akan dirunut-balik ke pengisian sebelumnya dengan mengganti dengan angka yang lain.
 
-Selain itu, algoritma backtracking juga efisien untuk penyelesaian Sudoku pada kasus rata-rata. Untuk kompleksitas algoritma backtracking pada Sudoku, kompleksitas waktu yang diperlukan adalah O(9^(n*n)). Kompleksitas waktu tersebut diperoleh mengingat banyaknya opsi pemilihan angka dari 1-9 untuk setiap area / cell pada matrix 9x9 (n x n). Sedangkan kompleksitas ruang yang diperlukan adalah O(n^n) untuk menyimpan grid dalam sebuah matrix.
+Selain itu, algoritma backtracking juga efisien untuk penyelesaian Sudoku pada kasus rata-rata. Untuk kompleksitas algoritma backtracking pada Sudoku, kompleksitas waktu yang diperlukan adalah O(9^(n*n)). Kompleksitas waktu tersebut diperoleh mengingat banyaknya opsi pemilihan angka dari 1-9 untuk setiap area / cell pada matrix 9x9 (NxN). Sedangkan kompleksitas ruang yang diperlukan adalah O(n^n) untuk menyimpan grid dalam sebuah matrix.
 
 ### Library Pengerjaan Bonus
 Coming Soon!
@@ -28,6 +28,42 @@ Kelebihan = ???
 Kekurangan = ???
 
 ## Getting Started
+Instruksi-instruksi berikut ini akan membimbing Anda dalam tahap instalasi aplikasi dan cara menjalankannya.
+
+### Prerequisites
+Berikut ini adalah persiapan environment yang dibutuhkan untuk menjalankan aplikasi.
+```
+- Python 3.x.x untuk bahasa pemrograman aplikasi
+- OpenCV untuk pemrosesan gambar menjadi matriks
+```
+
+### Installing
+Berikut ini adalah langkah-langkah dalam penginstallan aplikasi:
+1. Install library opencv-python terlebih dahulu menggunakan command sebagai berikut.
+```
+pip install opencv-python
+```
+2. Semua prerequisites sudah disiapkan dengan baik.
+
+## How to Run Program
+Untuk menjalankan program, pastikan command sudah berada dalam directory `./src`, lalu jalankan command sebagai berikut.
+```
+python main.py
+```
+
+## Guideline: How to Use
+1. Masukkan pilihan metode pengambilan grid sudoku. Terdapat dua pilihan, yaitu pengambilan dari gambar dan pengambilan dari text file
+2. Siapkan file-file gambar atau text file untuk dijadikan sebagai bahan untuk pengambilan gambar sudoku. Pastikan bahwa file-file tersebut disimpan pada `./test`
+3. Masukkan nama file yang ingin diproses pada perintah input nama file pada aplikasi.
+4. Program akan menampilkan grid sudoku awal, bila sudah yakin dengan grid sudoku tersebut, lanjutkan prosedur.
+5. Tunggu dalam beberapa saat selama grid sudoku diselesaikan oleh program.
+6. Hasil penyelesaian sudoku akan ditampilkan pada layar dan disimpan pada file eksternal pada `./src` dengan nama yang sama dengan nama file.
+7. Selamat! Sudoku Puzzle sudah diselesaikan.
+
+Catatan: Tidak semua sudoku puzzle mungkin bisa diselesaikan.
+
+## Built With
+* [Python](https://www.python.org/) - Bahasa pemrograman utama aplikasi
 
 ## Referensi
 1. Sudoku Solver with Backtracking: https://www.geeksforgeeks.org/sudoku-backtracking-7/
