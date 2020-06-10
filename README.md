@@ -18,58 +18,56 @@ Anda adalah Mr. Khun, saat ini Anda tergabung bersama tim Sweet & Sour untuk men
 - [X] Program dikerjakan secara Individu dan mencantumkan referensi
 
 ### Strategi Pencarian Solusi
-Algoritma yang digunakan dalam penyelesaian Sudoku adalah algoritma Backtracking. Alasan penggunaan algoritma Backtracking sendiri adalah karena prinsip dan cara kerja dari algoritma ini menurut saya cukup pintar dan logis seperti cara bermain sudoku yang sebenarnya. Pengisian sudoku memanfaatkan rules dari permainan Sudoku itu sendiri, yaitu memastikan setiap angka yang diisi merupakan angka yang unik pada satu kolom, satu baris, dan satu sub-grid tempat pengisian tersebut. Program akan melakukan iterasi seluruh area terurut dari atas ke bawah untuk pengisian setiap area. Apabila hasil pengisian mentok pada titik tertentu, pengisian akan dirunut-balik ke pengisian sebelumnya dengan mengganti dengan angka yang lain.
+Algoritma yang digunakan dalam penyelesaian Sudoku adalah algoritma **Backtracking**. Alasan penggunaan algoritma Backtracking sendiri adalah karena prinsip dan cara kerja dari algoritma ini menurut saya cukup pintar dan logis seperti cara bermain sudoku yang sebenarnya. Pengisian sudoku memanfaatkan rules dari permainan Sudoku itu sendiri, yaitu memastikan setiap angka yang diisi merupakan angka yang unik pada satu kolom, satu baris, dan satu sub-grid tempat pengisian tersebut. Program akan melakukan iterasi seluruh area terurut dari atas ke bawah untuk pengisian setiap area. Apabila hasil pengisian mentok pada titik tertentu, pengisian akan dirunut-balik (undo) ke pengisian sebelumnya dengan mengganti dengan angka yang lain.
 
-Selain itu, algoritma backtracking juga efisien untuk penyelesaian Sudoku pada kasus rata-rata. Untuk kompleksitas algoritma backtracking pada Sudoku, kompleksitas waktu yang diperlukan adalah O(9^(n*n)). Kompleksitas waktu tersebut diperoleh mengingat banyaknya opsi pemilihan angka dari 1-9 untuk setiap area / cell pada matrix 9x9 (NxN). Sedangkan kompleksitas ruang yang diperlukan adalah O(n^n) untuk menyimpan grid dalam sebuah matrix.
+Selain itu, algoritma backtracking juga efisien untuk penyelesaian Sudoku pada kasus rata-rata. Untuk kompleksitas algoritma backtracking pada Sudoku, kompleksitas waktu yang diperlukan adalah O(9^(n*n)). Kompleksitas waktu tersebut diperoleh mengingat banyaknya opsi pemilihan angka dari 1-9 untuk setiap area / cell pada matrix 9x9 (NxN). Sedangkan kompleksitas ruang yang diperlukan adalah O(n^n) untuk menyimpan grid sudoku dalam sebuah matrix.
 
 ### Library Pengerjaan Bonus
 Dalam pengerjaan bonus, berikut ini adalah beberapa library yang digunakan dalam menunjang pemrosesan gambar sudoku ke dalam program.
-- Tesseract<br>
-  Library ini digunakan untuk melakukan pengekstrakan data dari suatu gambar ke dalam string (Optical Character Recognizition)
-  Kelebihan (+) : Pengekstrakan data bisa dilakukan dengan cepat dan penulisan kode relatif lebih mudah (cukup 1 baris saja)
-  Kekurangan (-): Hasil ekstraksi terlalu detail sehingga pola-pola pada gambar seperti garis, kotak, atau gambar yang tidak beraturan juga ikut diekstrak menjadi simbol-simbol yang mendekatinya. Selain itu, instalasi library tesseract juga agak merumitkan dibandingkan library python lainnya.
-- Pillow (PIL)<br>
-  Library ini digunakan untuk melakukan pengolahan terhadap gambar yang diinput. Pengolahan tersebut dapat berupa pemotongan gambar (cropping) dengan tujuan agar hasil ekstrak data dari gambar bisa menjadi lebih akurat.
-  Kelebihan (+) : Pengolahan gambar yang lebih mudah mengingat method-method yang disediakan mudah dipahami dan mudah penggunaannya.
-  Kekurangan (-): Pengolahan gambar mungkin tidak sedetail dengan OpenCV. Gambar yang digunakan dalam pengekstrakan harus *straightforward* (langsung pada inti gambar yang ingin diolah).
-- Regular Expression<br>
-  Library ini digunakan untuk menghapus character-character non-numerik dari hasil pengekstrakan data.
-  Kelebihan (+) : Penghapusan character lebih mudah dan cepat
-  Kekurangan (-): Perlu mempelajari tata cara dan grammar tertentu dalam regular expression
+- **Tesseract**<br>
+  Library ini digunakan untuk melakukan pengekstrakan data dari suatu gambar ke dalam string (Optical Character Recognizition)<br>
+  Kelebihan (+) : Pengekstrakan data bisa dilakukan dengan cepat dan penulisan kode relatif lebih mudah (cukup 1 baris saja)<br>
+  Kekurangan (-): Hasil ekstraksi terlalu detail sehingga pola-pola pada gambar seperti garis, kotak, atau gambar yang tidak beraturan juga ikut diekstrak menjadi simbol-simbol yang mendekatinya. Selain itu, instalasi library tesseract juga agak merumitkan dibandingkan library python lainnya.<br>
+- **Pillow (PIL)**<br>
+  Library ini digunakan untuk melakukan pengolahan terhadap gambar yang diinput. Pengolahan tersebut dapat berupa pemotongan gambar (cropping) dengan tujuan agar hasil ekstrak data dari gambar bisa menjadi lebih akurat.<br>
+  Kelebihan (+) : Pengolahan gambar yang lebih mudah mengingat method-method yang disediakan mudah dipahami dan mudah penggunaannya.<br>
+  Kekurangan (-): Pengolahan gambar mungkin tidak sedetail dengan OpenCV. Gambar yang digunakan dalam pengekstrakan harus *straightforward* (langsung pada inti gambar yang ingin diolah).<br>
+- **Regular Expression**<br>
+  Library ini digunakan untuk menghapus character-character non-numerik dari hasil pengekstrakan data.<br>
+  Kelebihan (+) : Penghapusan character lebih mudah dan cepat<br>
+  Kekurangan (-): Perlu mempelajari tata cara dan grammar tertentu dalam regular expression<br>
 
 ## Getting Started
 Instruksi-instruksi berikut ini akan membimbing Anda dalam tahap instalasi aplikasi dan cara menjalankannya.
 
 ### Prerequisites
 Berikut ini adalah persiapan environment yang dibutuhkan untuk menjalankan aplikasi.
-```
 - Python 3.x.x untuk bahasa pemrograman aplikasi
 - Pillow (PIL) untuk pemrosesan gambar menjadi matriks
 - Tesseract-OCR untuk pengekstrakan data dari gambar
-```
 
 ### Installing
 Berikut ini adalah langkah-langkah dalam penginstallan aplikasi:
 1. Install library pillow terlebih dahulu menggunakan command sebagai berikut.
-```
-pip install pillow
-```
+  ```
+  pip install pillow
+  ```
 2. Install Tesseract dengan mengunduh installer pada laman berikut ini.
-```
-https://sourceforge.net/projects/tesseract-ocr/
-```
+  ```
+  https://sourceforge.net/projects/tesseract-ocr/
+  ```
 3. Agar tesseract dapat digunakan dalam program python, lakukan penginstallan library PyTesseract dengan menjalankan command berikut ini.
-```
-pip install pytesseract
-```
+  ```
+  pip install pytesseract
+  ```
 4. Pada source code ./src/reader.py, ubah path dari tesseract sesuai dengan lokasi penginstallan Tesseract dilakukan. Sebagai contoh, pengembang menginstall tesseract pada directory berikut ini.
-```
-'C:/Users/micha/AppData/Local/Tesseract-OCR/tesseract.exe
-```
-Oleh karena itu, path tesseract pada `./src/reader.py` diubah secara manual dengan mengisikan path diatas sebagai berikut.
-<p align="center">
-    <img align="center" src="assets/Install-Tesseract.png"
-</p>
+  ```
+  C:/Users/micha/AppData/Local/Tesseract-OCR/tesseract.exe
+  ```
+  Oleh karena itu, path tesseract pada `./src/reader.py` diubah secara manual dengan mengisikan path diatas sebagai berikut.
+  <p align="center">
+      <img align="center" src="assets/Install-Tesseract.png"
+  </p>
 
 5. Semua prerequisites sudah disiapkan dengan baik.
 
@@ -98,6 +96,8 @@ Catatan: Tidak semua sudoku puzzle bisa diselesaikan.
 1. Sudoku Solver with Backtracking: https://www.geeksforgeeks.org/sudoku-backtracking-7/
 2. Implement A Sudoku Solver: https://www.youtube.com/watch?v=JzONv5kaPJM&
 3. Algoritma Runut-Balik (Backtracking): https://informatika.stei.itb.ac.id/~rinaldi.munir/Stmik/2017-2018/Algoritma-Runut-balik-(2018).pdf
+4. Pillow Tutorial: https://pillow.readthedocs.io/en/4.1.x/handbook/tutorial.html
+5. How to split image into small blocks: https://answers.opencv.org/question/173852/how-to-split-image-into-small-blocks-process-on-them-and-then-join-all-the-blocks-together-again/
 
 ## Author
 **13518056 - Michael Hans** - *Designer, Programmer, and Tester*
