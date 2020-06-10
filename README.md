@@ -29,8 +29,8 @@ Dalam pengerjaan bonus, berikut ini adalah beberapa library yang digunakan dalam
   - *Kelebihan (+)* :<br>
     Pengekstrakan data bisa dilakukan dengan cepat dan penulisan kode relatif lebih mudah (cukup 1 baris saja)<br>
   - *Kekurangan (-)*:<br>
-    Hasil ekstraksi terlalu detail sehingga pola-pola pada gambar seperti garis, kotak, atau gambar yang tidak beraturan juga ikut diekstrak menjadi simbol-simbol yang mendekatinya. Selain itu, instalasi library tesseract juga agak merumitkan dibandingkan library python lainnya.<br>
-- **Pillow (PIL)**<br><br>
+    Hasil ekstraksi terlalu detail sehingga pola-pola pada gambar seperti garis, kotak, atau gambar yang tidak beraturan juga ikut diekstrak menjadi simbol-simbol yang mendekatinya. Selain itu, instalasi library tesseract juga agak merumitkan dibandingkan library python lainnya.<br><br>
+- **Pillow (PIL)**<br>
   Library ini digunakan untuk melakukan pengolahan terhadap gambar yang diinput. Pengolahan tersebut dapat berupa pemotongan gambar (cropping) dengan tujuan agar hasil ekstrak data dari gambar bisa menjadi lebih akurat.<br>
   - *Kelebihan (+)* :<br>
     Pengolahan gambar yang lebih mudah mengingat method-method yang disediakan mudah dipahami dan mudah penggunaannya.<br>
