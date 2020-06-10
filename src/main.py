@@ -23,26 +23,31 @@ choice = int(input())
 if (choice == 1):
     print("Masukkan nama file gambar yang ingin diambil: ",end='')
     fileName = input()
+    print("Please wait for extracting ...")
     Grid = LoadFromImage(fileName)
-    fileName = fileName + 'result.txt'
+    fileName = fileName + '-result.txt'
     print("Pengambilan grid sudoku dari file gambar berhasil!")
 else:
     print("Masukkan nama file text yang ingin diambil: ",end='')
     fileName = input()
     Grid = LoadFromText(fileName)
     print("Pengambilan grid sudoku dari file text berhasil!")
+    fileName = fileName + '-result.txt'
 
 print()
 print("Section 2: Grid Sudoku Awal")
-print("Initialize Grid: ")
+print("Kondisi awal Grid Sudoku: ")
 PrintGrid(Grid)
 
+print()
+input("Tekan ENTER untuk melanjutkan program ...")
 print()
 print("Section 3: Solving the Grid")
 print("Please wait ...")
 time_origin = time.time()
 
 if (SolveTheGrid(Grid)):
+    print()
     print("Sudoke Puzzle Solved!")
     PrintGrid(Grid)
     print()
@@ -51,7 +56,8 @@ if (SolveTheGrid(Grid)):
     listOfCoordinate = GetAllCoordinate(Grid, 5)
     PrintCoordinate(listOfCoordinate, 5)
     time_end = time.time()
-
+    
+    print()
     print("Waktu yang diperlukan untuk menyelesaikan Grid Sudoku adalah "+str(time_end - time_origin)+" detik")
 
     # Menuliskan output ke text file
@@ -66,11 +72,9 @@ if (SolveTheGrid(Grid)):
 
     print("Hasil sudoku berhasil disimpan!")
     print("Hasil sudoku disimpan pada ./result/"+fileName)
-    print()
 
 else:
     print("Maaf, grid sudoku tidak dapat diselesaikan!")
-    print()
 
 print()
 input("Click ENTER to end the program ...")

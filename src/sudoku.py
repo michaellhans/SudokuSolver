@@ -1,6 +1,48 @@
 # sudoku.py
 # Contain all procedure and function about sudoku
 
+# Boolean Checker
+# Check if the value has already assigned in row
+def CheckInRow(Grid, row, value):
+    found = False
+    for i in range(9):
+        if (Grid[row][i] == value):
+            found = True
+            break
+    return found
+
+# Check if the value has already assigned in column
+def CheckInColumn(Grid, column, value):
+    found = False
+    for i in range(9):
+        if (Grid[i][column] == value):
+            found = True
+            break
+    return found
+
+# Check if the value has already assigned in subgrid
+def CheckInSubGrid(Grid, row, column, value):
+    found = False
+    for i in range(3):
+        for j in range(3):
+            rowPos = int(row/3) * 3 + i
+            columnPos = int(column/3) * 3 + j
+            if (Grid[rowPos][columnPos] == value):
+                found = True
+    return found
+
+# Sudoku rules: check availability value in certain row, column, and subgrid
+def CheckAvailability(Grid, row, column, value):
+    return not(CheckInRow(Grid, row, value) or CheckInColumn(Grid, column, value) or CheckInSubGrid(Grid, row, column, value))
+
+# Check if the grid is already full of numbers
+def IsGridFull(Grid):
+    for i in range(9):
+        for j in range(9):
+            if (Grid[i][j] == 0):
+                return False
+    return True
+
 # Print the grid to the output screen
 def PrintGrid(Grid):
     for i in range(9):
@@ -82,45 +124,3 @@ def SolveTheGrid(Grid):
         return True
     else:
         return FillTheGrid(Grid, 0, 0)
-        
-# Boolean Checker
-# Check if the value has already assigned in row
-def CheckInRow(Grid, row, value):
-    found = False
-    for i in range(9):
-        if (Grid[row][i] == value):
-            found = True
-            break
-    return found
-
-# Check if the value has already assigned in column
-def CheckInColumn(Grid, column, value):
-    found = False
-    for i in range(9):
-        if (Grid[i][column] == value):
-            found = True
-            break
-    return found
-
-# Check if the value has already assigned in subgrid
-def CheckInSubGrid(Grid, row, column, value):
-    found = False
-    for i in range(3):
-        for j in range(3):
-            rowPos = int(row/3) * 3 + i
-            columnPos = int(column/3) * 3 + j
-            if (Grid[rowPos][columnPos] == value):
-                found = True
-    return found
-
-# Sudoku rules: check availability value in certain row, column, and subgrid
-def CheckAvailability(Grid, row, column, value):
-    return not(CheckInRow(Grid, row, value) or CheckInColumn(Grid, column, value) or CheckInSubGrid(Grid, row, column, value))
-
-# Check if the grid is already full of numbers
-def IsGridFull(Grid):
-    for i in range(9):
-        for j in range(9):
-            if (Grid[i][j] == 0):
-                return False
-    return True
